@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linLayout2"
+        android:background="@color/orange_300"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/song_img"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="6dp"
+            android:layout_weight="0.8"
+            android:src="@drawable/ic_headset"
+            android:transitionName="song_album_art" />
+
+        <TextView
+            android:id="@+id/song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.1"
+            android:ellipsize="marquee"
+            android:gravity="bottom"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="A place for my Head"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            android:transitionName="song_title" />
+
+        <TextView
+            android:id="@+id/song_artist_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="Linkin Park"
+            android:textColor="@color/grey_600"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:transitionName="song_artist_name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relLayout3"
+        android:background="@color/orange_300"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/song_current_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:text="02:08"
+            android:gravity="right"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight="0.7" />
+
+        <TextView
+            android:id="@+id/song_duration"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:text="02:08"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/grey_shadow_top"
+        android:padding="12dp"
+        android:transitionName="controll_buttons">
+
+        <ImageButton
+            android:id="@+id/btn_previous"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btn_pause"
+            android:background="@drawable/play_prev_circle" />
+
+        <ImageButton
+            android:id="@+id/btn_pause"
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/ic_play" />
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/btn_pause"
+            android:background="@drawable/play_next_circle" />
+    </RelativeLayout>
+
+</RelativeLayout>
