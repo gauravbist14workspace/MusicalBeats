@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MusicalBeat</string>
+    <string-array name="options">
+        <item>Delete</item>
+        <item>Rename</item>
+        <item>Share</item>
+    </string-array>
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <LinearLayout
+        android:id="@+id/linLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/song_img"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.15"
+            android:src="@drawable/ic_headset" />
+
+        <RelativeLayout
+            android:id="@+id/relLayout1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.85"
+            android:paddingLeft="2dp">
+
+            <TextView
+                android:id="@+id/notification_song_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_margin="4dp"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:maxLines="1"
+                android:justificationMode="inter_word"
+                android:paddingRight="16dp"
+                android:text="A place for my head"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/notify_btn_stop"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/ic_stop" />
+
+            <LinearLayout
+                android:id="@id/relLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notification_song_title"
+                android:orientation="horizontal"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:weightSum="3">
+
+                <ImageView
+                    android:id="@+id/notify_btn_previous"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/btn_pause"/>
+
+                <ImageView
+                    android:id="@+id/btn_pause"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true" />
+
+                <ImageView
+                    android:id="@+id/notify_btn_next"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/btn_pause" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

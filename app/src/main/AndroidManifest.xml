@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.uzumaki.naruto.musicalbeat">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".App"
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.MusicFull" />
+        <service android:name=".Service.MusicService">
+            <intent-filter>
+                <action android:name="MainActivity.STOP" />
+                <action android:name="MainActivity.NEXT" />
+                <action android:name="MainActivity.PREVIOUS" />
+                <action android:name="MainActivity.PAUSE" />
+
+                <action android:name="MusicFull.STOP" />
+                <action android:name="MusicFull.NEXT" />
+                <action android:name="MusicFull.PREVIOUS" />
+                <action android:name="MusicFull.PAUSE" />
+
+                <action android:name="com.uzumaki.naruto.musicalbeat.THREAD_START" />
+                <action android:name="com.uzumaki.naruto.musicalbeat.THREAD_STOP" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
